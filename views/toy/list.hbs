@@ -7,8 +7,8 @@
             <img class="card-img-top mt-3" src="{{ image }}" width="100" height="250">
             <div class="card-body">
                <h4 class="card-title text-success">{{ name }}</h4>
-               <p class="fw-bold card-text text-primary" style="text-color: red;">${{ price }}</p>
-               <p class="text-primary">{{ description }}</p>
+               <p class="fw-bold" style="color: rgb(248, 92, 118);">${{ price }}</p>
+               <p>{{ description }}</p>
                <form action="/toy/view" method="post">
                  <input type="hidden" name="id" value="{{_id}}">
                  <input type="submit" class="btn btn-danger" value="View"/>

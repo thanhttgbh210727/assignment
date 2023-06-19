@@ -1,0 +1,32 @@
+<div class="container text-center">
+   <div class="col">
+      <div class="row">
+         <h1 class="text text-warning mb-3">Product Detail</h1>
+      </div>
+      <div class="row">
+         <table class="table table-bordered">
+            <tr>
+               <th>Product Name</th>
+               <td>{{ toy.name }}</td>
+            </tr>
+            <tr>
+               <th>Price</th>
+               <td>{{ toy.price }}</td>
+            </tr>
+            <tr>
+               <th>Description</th>
+               <td>{{ toy.description }}</td>
+            </tr>
+            <tr>
+               <th>Image</th>
+               <td><img src="{{ toy.image }}" width="150" height="150"></td>
+            </tr>
+            <tr>
+               <th colspan="2">
+                  <button class="btn btn-success">Buy</button>
+               </th>
+            </tr>
+         </table>
+      </div>
+   </div>
+</div>

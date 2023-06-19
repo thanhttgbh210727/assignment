@@ -1,0 +1,20 @@
+<div class="container text-center">
+   <h1 class="text text-warning mb-2">Available Game</h1>
+
+   <div class="card-group">
+      <div class="row">
+         {{#each game }}
+         <div class="card col-md-3 mb-3">
+            <div class="card-body">
+               <h4 class="card-title text-success">{{ title }}</h4>
+               <p class="fw-bold card-text text-primary">{{ description }}</p>
+               <form action="/game/view" method="post">
+                 <input type="hidden" name="id" value="{{_id}}">
+                 <input type="submit" class="btn btn-danger" value="View"/>
+               </form>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+</div>

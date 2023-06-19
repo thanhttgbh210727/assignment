@@ -9,6 +9,6 @@ var ToySchema = mongoose.Schema(
     }
 );
 
-var ToyModel = mongoose.model('toy', ToySchema);
+var ToyModel = mongoose.model('toy', ToySchema, 'toy');
 
 module.exports = ToyModel;

@@ -1,0 +1,28 @@
+<div class="container text-center">
+   <div class="col">
+      <div class="row">
+         <h1 class="text text-warning mb-3">Game Detail</h1>
+      </div>
+      <div class="row">
+         <table class="table table-bordered">
+            <tr>
+               <th>Title</th>
+               <td>{{ game.title }}</td>
+            </tr>
+            <tr>
+               <th>Description</th>
+               <td>{{ game.description }}</td>
+            </tr>
+            <tr>
+               <th>Trailer</th>
+               <td><iframe src="https://www.youtube.com/embed/{{ game.trailer }}" width="250" height="150"></iframe></td>
+            </tr>
+            <tr>
+               <th colspan="2">
+                  <button class="btn btn-success">Buy</button>
+               </th>
+            </tr>
+         </table>
+      </div>
+   </div>
+</div>

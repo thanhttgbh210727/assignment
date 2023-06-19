@@ -1,0 +1,21 @@
+<div class="container text-center">
+   <h1 class="text text-warning mb-2">Available Product</h1>
+   <div class="card-group">
+      <div class="row">
+         {{#each toy }}
+         <div class="card col-md-3 mb-3">
+            <img class="card-img-top mt-3" src="{{ image }}" width="150" height="150">
+            <div class="card-body">
+               <h4 class="card-title text-success">{{ name }}</h4>
+               <p class="fw-bold card-text text-primary">${{ price }}</p>
+               <p class="fw-bold card-text text-primary">{{ description }}</p>
+               <form action="/toy/view" method="post">
+                 <input type="hidden" name="id" value="{{_id}}">
+                 <input type="submit" class="btn btn-danger" value="View"/>
+               </form>
+            </div>
+         </div>
+         {{/each}}
+      </div>
+   </div>
+</div>

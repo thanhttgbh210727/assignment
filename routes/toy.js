@@ -1,12 +1,14 @@
 var express = require ('express');
 const ToyModel = require('../models/ToyModel');
+const GameModel = require('../models/GameModel');
 var router = express.Router();
 
 //Show
 router.get('/', async (req, res) => {
-    var toy_list = await ToyModel.find({})
-    res.render('toy/index', { toy : toy_list })
- });
+   var game_list = await GameModel.find({});
+   var toy_list = await ToyModel.find({});
+   res.render('home', { game: game_list, toy: toy_list });
+});
  
  router.get('/list', async (req, res) => {
     var toy_list = await ToyModel.find({})
@@ -22,7 +24,6 @@ router.get('/', async (req, res) => {
  router.post('/add', async (req, res) => {
     var toy = req.body;
     await ToyModel.create(toy)
-    .then(() => { console.log ("New toy has been added !")});
     res.redirect('/toy');
  });
  
@@ -30,7 +31,6 @@ router.get('/', async (req, res) => {
  //Delete
  router.get('/delete/:id', async(req, res) => {
     await ToyModel.findByIdAndDelete(req.params.id)
-    .then(() => { console.log ('Selected toy has been deleted')});
     res.redirect('/toy');
  });
 
@@ -53,7 +53,6 @@ router.get('/', async (req, res) => {
  
  router.post('/edit/:id', async (req, res) => {
     await ToyModel.findByIdAndUpdate(req.params.id, req.body)
-       .then(() => { console.log("Selected toy has been edited !") });
     res.redirect('/toy');
  }); 
 

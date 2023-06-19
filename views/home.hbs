@@ -1,0 +1,55 @@
+<div class="container text-center">
+   <h2>Game List</h2>
+   <table class="table bordered">
+      <!-- Table headers -->
+      <tr>
+         <th>Title</th>
+         <th>Description</th>
+         <th>Trailer</th>
+         <th>Action</th>
+      </tr>
+      <!-- Game list -->
+      {{#each game}}
+      <tr>
+         <td>{{title}}</td>
+         <td>{{description}}</td>
+         <td>
+            <iframe src="https://www.youtube.com/embed/{{trailer}}" width="300" height="175"></iframe>
+         </td>
+         <td>
+            <a class="btn btn-warning" href="/game/edit/{{_id}}">Edit</a>
+            <a class="btn btn-danger" href="/game/delete/{{_id}}" onclick="return confirm('Are you sure to delete?');">Delete</a>
+         </td>
+      </tr>
+      {{/each}}
+   </table>
+</div>
+
+<div class="container text-center">
+   <h2>Toy List</h2>
+   <table class="table bordered">
+      <!-- Table headers -->
+      <tr>
+         <th>Product Name</th>
+         <th>Price</th>
+         <th>Description</th>
+         <th>Image</th>
+         <th>Action</th>
+      </tr>
+      <!-- Toy list -->
+      {{#each toy}}
+      <tr>
+         <td>{{name}}</td>
+         <td>${{price}}</td>
+         <td>{{description}}</td>
+         <td>
+            <img src="{{image}}" width="150" height="150">
+         </td>
+         <td>
+            <a class="btn btn-warning" href="/toy/edit/{{_id}}">Edit</a>
+            <a class="btn btn-danger" href="/toy/delete/{{_id}}" onclick="return confirm('Are you sure to delete?');">Delete</a>
+         </td>
+      </tr>
+      {{/each}}
+   </table>
+</div>

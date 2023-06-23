@@ -6,56 +6,56 @@ var router = express.Router();
 
 //Show
 router.get('/', async (req, res) => {
-   var game_list = await GameModel.find({});
-   var toy_list = await ToyModel.find({});
-   var lego_list = await LegoModel.find({});
-   res.render('home', { game: game_list, toy: toy_list, lego: lego_list });
-});
+    var game_list = await GameModel.find({});
+    var toy_list = await ToyModel.find({});
+    var lego_list = await LegoModel.find({});
+    res.render('home', { game: game_list, toy: toy_list, lego: lego_list });
+ });
  
  router.get('/list', async (req, res) => {
-    var game_list = await GameModel.find({})
-    res.render('game/list', { game: game_list })
+    var lego_list = await LegoModel.find({})
+    res.render('lego/list', { lego: lego_list })
  });
 
 
 //Add
  router.get('/add', (req, res) => {
-    res.render('game/add');
+    res.render('lego/add');
  });
  
  router.post('/add', async (req, res) => {
-    var game = req.body;
-    await GameModel.create(game)
-    res.redirect('/game');
+    var lego = req.body;
+    await LegoModel.create(lego)
+    res.redirect('/lego');
  });
  
  //Delete
  router.get('/delete/:id', async(req, res) => {
-    await GameModel.findByIdAndDelete(req.params.id)
-    res.redirect('/game');
+    await LegoModel.findByIdAndDelete(req.params.id)
+    res.redirect('/lego');
  });
 
  
  //View
  router.post('/view', async (req, res) => {
     var id = req.body.id;
-    var game = await GameModel.findById(id);
-    res.render("game/view", { game : game })
+    var lego = await LegoModel.findById(id);
+    res.render("lego/view", { lego : lego })
  });
 
 
  //Edit
  router.get('/edit/:id', async (req, res) => {
     var id = req.params.id;
-    var game = await GameModel.findById(id);
-    res.render('game/edit', { game : game });
+    var lego = await LegoModel.findById(id);
+    res.render('lego/edit', { lego : lego });
  });
 
  
  router.post('/edit/:id', async (req, res) => {
     var id = req.params.id;
-    await GameModel.findByIdAndUpdate(id)
-    res.redirect('/game');
+    await LegoModel.findByIdAndUpdate(id)
+    res.redirect('/lego');
  });
 
 

@@ -1,7 +1,6 @@
 var express = require ('express');
 const ToyModel = require('../models/ToyModel');
 const GameModel = require('../models/GameModel');
-const LegoModel = require('../models/LegoModel');
 var router = express.Router();
 
 //Show

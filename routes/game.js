@@ -1,15 +1,13 @@
 var express = require ('express');
 const GameModel = require('../models/GameModel');
 const ToyModel = require('../models/ToyModel');
-const LegoModel = require('../models/LegoModel');
 var router = express.Router();
 
 //Show
 router.get('/', async (req, res) => {
    var game_list = await GameModel.find({});
    var toy_list = await ToyModel.find({});
-   var lego_list = await LegoModel.find({});
-   res.render('home', { game: game_list, toy: toy_list, lego: lego_list });
+   res.render('home', { game: game_list, toy: toy_list });
 });
  
  router.get('/list', async (req, res) => {

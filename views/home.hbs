@@ -113,32 +113,6 @@
    </div>
 </div>
 
-<br><br><br><br><br><br>
-
-<div class="container text-center">
-   <h1 style="text-align: center; color: #FF0066; background-color: #F2F2F2; padding: 20px;">Lego List</h1>
-   <br/><br/>
-   <a class="btn btn-primary float-end" style="padding: 5px;" href="/lego/add">Add Lego</a>
-   <br><br>
-   <div class="list-group">
-      {{#each lego}}
-      <div class="list-group-item">
-         <div class="row">
-            <div class="col-4">
-               <img src="{{image}}" width="150" height="150">
-            </div>
-            <div class="col-8">
-               <h4 class="list-group-item-heading" style="color: forestgreen;">{{name}}</h4>
-               <p class="list-group-item-text" style="color: forestgreen;">Price: ${{price}}</p>
-               <p class="list-group-item-text" style="color: forestgreen;">{{description}}</p>
-               <a class="btn btn-warning" href="/lego/edit/{{_id}}">Edit</a>
-               <a class="btn btn-danger" href="/lego/delete/{{_id}}" onclick="return confirm('Are you sure to delete?');">Delete</a>
-            </div>
-         </div>
-      </div>
-      {{/each}}
-   </div>
-</div>
 <div class="d-flex justify-content-center">
    <a href="/" class="btn btn-primary">Back to homepage</a>
 </div>

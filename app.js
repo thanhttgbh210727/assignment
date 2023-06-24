@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended : false}))
 
 //Khai báo DB
 var mongoose = require("mongoose");
-var uri = "mongodb+srv://thanhttgbh210727:DN5sdI1rVL7E0AnR@gch1101.gazkxzq.mongodb.net/Assignment";
-mongoose.connect(uri)
+var url = "mongodb+srv://thanhttgbh210727:DN5sdI1rVL7E0AnR@gch1101.gazkxzq.mongodb.net/Assignment";
+mongoose.connect(url)
 .then(() => console.log ("Connect to DB successfully !"))
 .catch((err) => console.log (err));
 
